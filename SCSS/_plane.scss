@@ -1,0 +1,9 @@
+.seat {
+  cursor: pointer !important;
+}
+
+.clicked {
+  fill: $primary-color;
+  cursor: pointer !important;
+  fill: red !important;
+}

@@ -1,0 +1,501 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.25rem 1.25rem;
+  background: #1435EB;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.nav-area {
+  list-style: none;
+}
+
+.nav-area li {
+  display: inline-block;
+  padding: 0 1rem;
+  text-transform: uppercase;
+}
+
+.nav-area li a {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: #fff;
+}
+
+.nav-area li a:hover {
+  opacity: 0.5;
+}
+
+.form-box {
+  background: #fff;
+  border-radius: 4px;
+  border-color: #4A4A4A;
+}
+
+.dark {
+  background: darkgrey;
+  background-image: url("/svg/logo.svg");
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+}
+
+.booking-form {
+  padding: 1.5rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.booking-form__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  margin: 1.5rem;
+}
+
+#flights-body {
+  background: white;
+}
+
+#flights-main {
+  margin: 1.5rem auto 0;
+  max-width: auto;
+}
+
+.img {
+  padding-left: 3rem;
+}
+
+.search-results-box__information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.search-results-box__results {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.search-results-box__results__result {
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.result-box-grid {
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "flight-details-box airplane-icon flight-details-box flight-details-box buy-button";
+  -ms-grid-columns: (auto)[5];
+      grid-template-columns: repeat(5, auto);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.result-box-grid__flight-details-box {
+  display: inline-block;
+}
+
+.result-box-grid__flight-details-box p {
+  color: #4A4A4A;
+  font-size: 0.875rem;
+}
+
+#login-body {
+  background: #E5E5E5;
+}
+
+.login-form {
+  padding: 1.5rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.login-form__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+  margin: 1.5rem;
+}
+
+.button {
+  width: 328px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: "Poppins";
+  color: #4A4A4A;
+}
+
+.button__confirm-button {
+  font-size: 1rem;
+  font-family: "Poppins";
+  height: 57px;
+  max-width: auto;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  background: #1435EB;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button__confirm-button::before {
+  content: url(/svg/loupe.svg);
+  display: inline-block;
+  padding-right: 0.625rem;
+  vertical-align: middle;
+  padding-top: 0.5rem;
+}
+
+.button__buy-button, .button__register-button {
+  background: #fff;
+  font-family: "Poppins";
+  font-size: 1rem;
+  color: #1435EB;
+  font-weight: 600;
+  border: 2px solid #1435EB;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.button__buy-button__box, .button__register-button__box {
+  padding: 1rem;
+}
+
+.button__buy-button::before {
+  content: url(/svg/bucket.svg);
+  display: inline-block;
+  padding-right: 0.5rem;
+  vertical-align: middle;
+  padding-top: 0.75rem;
+  background-color: #fff;
+}
+
+.button__login-button {
+  width: 100%;
+  background: #1435EB;
+  font-family: "Poppins";
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 550;
+  border: 2px solid #1435EB;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.button__login-button::before {
+  content: url(/svg/person-2.svg);
+  display: inline-block;
+  padding-right: 0.5rem;
+  vertical-align: middle;
+  padding-top: 0.5rem;
+  background-color: #1435EB;
+  color: #fff;
+}
+
+.button__return-button {
+  background: #fff;
+  font-family: "Poppins";
+  font-size: 1rem;
+  color: #1435EB;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.button__return-button::before {
+  content: url(/svg/returnarrow.svg);
+  display: inline-block;
+  padding-right: 0.5rem;
+  vertical-align: middle;
+  padding-top: 0.75rem;
+  background-color: #fff;
+}
+
+.passenger-input {
+  border: 1px solid #4A4A4A;
+  border-radius: 4px;
+  background-image: url("/svg/person.svg");
+  background-repeat: no-repeat;
+  background-position: 95%;
+}
+
+.password-input {
+  border: 1px solid #4A4A4A;
+  border-radius: 4px;
+  background-image: url("/svg/eye.svg");
+  background-repeat: no-repeat;
+  background-position: 95%;
+}
+
+#booking-body {
+  background: #E5E5E5;
+}
+
+#booking-main {
+  margin: 1.5rem auto 0;
+  max-width: auto;
+}
+
+.booking-seats-grid {
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  margin: 1.5rem;
+}
+
+.booking-box-header {
+  display: -ms-grid;
+  display: grid;
+  justify-items: start;
+  -ms-grid-columns: (37.5%)[2];
+      grid-template-columns: repeat(2, 37.5%);
+  margin-bottom: 3rem;
+}
+
+.dot__step {
+  height: 42px;
+  width: 42px;
+  background: #E5E5E5;
+  border-radius: 50%;
+  display: inline-block;
+  color: #1435EB;
+  text-align: center;
+  font-size: 1.25rem;
+  padding-top: 0.35rem;
+  margin-right: 1rem;
+  font-weight: 600;
+}
+
+.dot__occupied {
+  height: 24px;
+  width: 24px;
+  background: #1435EB;
+  border-radius: 50%;
+  padding-top: 0.35rem;
+  margin-right: 1rem;
+}
+
+.dot__not-occupied {
+  height: 24px;
+  width: 24px;
+  background: #E5E5E5;
+  border-radius: 50%;
+  padding-top: 0.35rem;
+  margin-right: 1rem;
+}
+
+.luggage-box {
+  display: inline-block;
+}
+
+.luggage-box__h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.choose-luggage-size__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.choose-luggage-size__h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+}
+
+.choose-luggage-size__p {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4A4A4A;
+}
+
+.choose-luggage-size__grid {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  margin: 2rem 0 3rem;
+  -ms-grid-columns: (3fr)[3];
+      grid-template-columns: repeat(3, 3fr);
+  grid-gap: 1rem;
+  max-width: 700px;
+}
+
+.choose-luggage-size__grid__small {
+  width: 175px;
+  height: 150px;
+  color: #fff;
+  background: #1435EB;
+  background-image: url("/svg/luggalewhite.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 1rem;
+  cursor: pointer;
+}
+
+.choose-luggage-size__grid__small__description {
+  padding-top: 4rem;
+  display: inline-block;
+}
+
+.choose-luggage-size__grid__medium {
+  width: 175px;
+  height: 150px;
+  color: #fff;
+  background: #E5E5E5;
+  background-image: url("/svg/luggageblue.svg"), url("/svg/luggageblue.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 38% 1rem, 62% 1rem;
+  cursor: pointer;
+}
+
+.choose-luggage-size__grid__medium__description {
+  padding-top: 4rem;
+  display: inline-block;
+}
+
+.choose-luggage-size__grid__large {
+  width: 175px;
+  height: 150px;
+  color: #fff;
+  background: #E5E5E5;
+  background-image: url("/svg/luggageblue.svg"), url("/svg/luggageblue.svg"), url("/svg/luggageblue.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 25% 1rem, 50% 1rem, 75% 1rem;
+  cursor: pointer;
+}
+
+.choose-luggage-size__grid__large__description {
+  padding-top: 4rem;
+  display: inline-block;
+}
+
+.seats-box__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.seats-box-plane {
+  margin: 4rem 0 3rem 0;
+}
+
+.seats-occupation-legend {
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.seats-occupation-legend__occupied, .seats-occupation-legend__not-occupied {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.seat {
+  cursor: pointer !important;
+}
+
+.clicked {
+  fill: #1435EB;
+  cursor: pointer !important;
+  fill: red !important;
+}
+
+body {
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(20, 53, 235, 0.1)), to(rgba(20, 53, 235, 0.5))), url("/img/aero.jpg");
+  background: linear-gradient(to right, rgba(20, 53, 235, 0.1), rgba(20, 53, 235, 0.5)), url("/img/aero.jpg");
+  background-size: cover;
+  font-family: "Poppins";
+  font-weight: 550;
+  font-size: 1rem;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10% auto 0;
+}
+
+main h1 {
+  font-family: "Poppins";
+  font-weight: 550;
+  font-size: 2rem;
+}
+/*# sourceMappingURL=main.css.map */

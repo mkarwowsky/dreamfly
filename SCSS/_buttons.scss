@@ -1,0 +1,180 @@
+.button {
+    width: 328px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: $font-family;
+    color: $grey;
+
+    &__confirm-button {
+        font-size: 1rem;
+        font-family: $font-family;
+        height: 57px;
+        max-width: auto;
+        grid-column: 1 / span 2;
+        grid-row: 3;
+        background: $primary-color;
+        color: $white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    &__confirm-button::before {
+        content: url(/svg/loupe.svg);
+        display: inline-block;
+        padding-right: 0.625rem;
+        vertical-align: middle;
+        padding-top: 0.5rem;
+    }
+
+    &__buy-button, &__register-button {
+        background: $white;
+        font-family: $font-family;
+        font-size: 1rem;
+        color: $primary-color;
+        font-weight: $font-weight-bold;
+        border: 2px solid $primary-color;
+        border-radius: 0.25rem;
+        cursor: pointer;
+
+        &__box {
+            padding: 1rem;
+        }
+    }
+    
+    
+    &__buy-button::before {
+        content: url(/svg/bucket.svg);
+        display: inline-block;
+        padding-right: 0.5rem;
+        vertical-align: middle;
+        padding-top: 0.75rem;
+        background-color: $white;
+    }
+
+    &__login-button {
+        width:100%;
+        background: $primary-color;
+        font-family: $font-family;
+        font-size: 1rem;
+        color: $white;
+        font-weight: $font-weight;
+        border: 2px solid $primary-color;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+    
+    
+    &__login-button::before {
+        content: url(/svg/person-2.svg);
+        display: inline-block;
+        padding-right: 0.5rem;
+        vertical-align: middle;
+        padding-top: 0.5rem;
+        background-color: $primary-color;
+        color: $white;
+    }
+
+    // &__register-button {
+    //     background: $white;
+    //     font-family: $font-family;
+    //     font-size: 1rem;
+    //     color: $primary-color;
+    //     font-weight: $font-weight;
+    //     border: 2px solid $primary-color;
+    //     border-radius: 0.25rem;
+    //     cursor: pointer;
+    // }
+
+    &__return-button{
+        background: $white;
+        font-family: $font-family;
+        font-size: 1rem;
+        color: $primary-color;
+        font-weight: $font-weight-bold;
+        border: none;
+        //border-radius: 0.25rem;
+        cursor: pointer;
+        position: relative;
+
+    }
+    
+    
+    &__return-button::before {
+        content: url(/svg/returnarrow.svg);
+        display: inline-block;
+        padding-right: 0.5rem;
+        vertical-align: middle;
+        padding-top: 0.75rem;
+        background-color: $white;
+    }
+}
+
+.passenger-input {
+    border: 1px solid $grey;
+    border-radius: 4px;
+    background-image: url('/svg/person.svg');
+    background-repeat: no-repeat;
+    background-position: 95%;
+}
+
+.password-input {
+    border: 1px solid $grey;
+    border-radius: 4px;
+    background-image: url('/svg/eye.svg');
+    background-repeat: no-repeat;
+    background-position: 95%;
+}
+
+// .button{
+//     width: 328px;
+//     height: 52px;
+//     padding: 1rem;
+//     font-size: 1rem;
+//     font-family: $font-family;
+//     color: $grey;
+
+//     &__confirm-button {
+//         font-size: 1rem;
+//         font-family: $font-family;
+//         height: 57px;
+//         max-width: auto;
+//         grid-column: 1 / span 2;
+//         grid-row: 3;
+//         background: $primary-color;
+//         color: $white;
+//         border: none;
+//         border-radius: 4px;
+//         cursor: pointer;
+//     }
+
+//     &__confirm-button::before{
+//         content: url(/svg/loupe.svg);
+//         display: inline-block;
+//         padding-right: 0.625rem;
+//         vertical-align: middle;
+//         padding-top: 0.5rem;
+//     }
+// }
+
+// .buy-button {
+//     background: $white;
+//     font-family: $font-family;
+//     font-size: 1rem;
+//     color: $primary-color;
+//     font-weight: 600;
+//     border: 2px solid $primary-color;
+//     border-radius: 0.25rem;
+//     cursor: pointer;
+// }
+
+
+// .buy-button::before{
+//     content: url(/svg/bucket.svg);
+//     display: inline-block;
+//     padding-right: 0.5rem;
+//     vertical-align: middle;
+//     padding-top: 0.75rem;
+//     background-color: $white;
+// }

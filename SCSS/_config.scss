@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+$primary-color: #1435EB;
+$secondary-color: #EBCA14;
+$third-color: #E5E5E5;
+$error: #EB1435;
+$grey: #4A4A4A;
+$white: #fff;
+$font-family: 'Poppins';
+$font-weight: 550;
+$font-weight-bold: 600;
+//$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

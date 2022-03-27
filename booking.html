@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/main.css">
+    <title>Dreamfly</title>
+</head>
+<body id="booking-body">
+    <header>
+        <img src = "/svg/logo.svg" class="logo">
+        <nav>
+            <ul class="nav-area">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Last Minute</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <img src = "/svg/logo.svg" class="logo">
+    </header>
+    <main id="booking-main">
+        <div class="form-box">
+            <div class="booking-seats-grid">
+                <div class="booking-box-header">
+                    <button class="button__return-button" onclick="location.href='login.html'">Back</button>
+                    <h1>Zakup biletów</h1>
+                </div>
+                <div class="choose-luggage-size">
+                    <div class="choose-luggage-size__header">
+                        <div class="dot__step">1</div>
+                        <div class="luggage-box__h1">Wybierz rozmiar bagażu</div>
+                    </div>
+                    
+                <div class="luggage-box">
+                        <div class="choose-luggage-size__grid">
+                            <div class="choose-luggage-size__grid__small">
+                                <div class="choose-luggage-size__grid__small__description">
+                                    <div class="choose-luggage-size__description__h2">Mały bagaż</div>
+                                    <div class="choose-luggage-size__description__p">30x45x60cm</div>
+                                    <div class="choose-luggage-size__description__p">Max. 5kg</div>
+                                </div>
+                            </div>
+
+                            <div class="choose-luggage-size__grid__medium">
+                                <div class="choose-luggage-size__grid__medium__description">
+                                    <div class="choose-luggage-size__h2">Mały bagaż</div>
+                                    <div class="choose-luggage-size__p">30x45x60cm</div>
+                                    <div class="choose-luggage-size__p">Max. 5kg</div>
+                                </div>
+                            </div>
+
+                            <div class="choose-luggage-size__grid__large">
+                                <div class="choose-luggage-size__grid__large__description">
+                                    <div class="choose-luggage-size__h2">Mały bagaż</div>
+                                    <div class="choose-luggage-size__p">30x45x60cm</div>
+                                    <div class="choose-luggage-size__p">Max. 5kg</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="seats-box">
+                        <div class="seats-box__header">
+                            <div class="dot__step">2</div>
+                            <div class="luggage-box__h1">Wybierz miejsca siedzące</div>
+                            <div class="luggage-box__h1">(pozostały 2)</div>
+                        </div>
+
+                        <div class="seats-box-plane">
+                            <div class="plane">
+                                <object id="svg-plane" data="/svg/plane.svg" type="image/svg+xml"></object>
+                            </div>
+
+                            <div class="seats-occupation-legend">
+                                <div class="seats-occupation-legend__occupied">
+                                    <div class="dot__occupied"></div>
+                                    <p>Miejsce zajęte</p>
+                                </div>
+
+                                <div class="seats-occupation-legend__not-occupied">
+                                    <div class="dot__not-occupied"></div>
+                                    <p>Miejsce wolne</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="button__login-button">Przejdź do płatności</button>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/plane.js"></script>
+</body>
+</html>
