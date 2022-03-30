@@ -10,7 +10,13 @@
 //     height: 100%;
 // }
 
-body{
+@mixin font-decoration($font-family, $font-weight) {
+    font-family: $font-family;
+    font-weight: $font-weight;
+}
+
+body {
+    @include font-decoration($font-family, $font-weight);
     height: 100vh;
     background: 
         linear-gradient(
@@ -20,8 +26,6 @@ body{
         ),
         url('/img/aero.jpg');
     background-size: cover;
-    font-family: $font-family;
-    font-weight: $font-weight;
     font-size: 1rem;
 }
 
@@ -31,8 +35,7 @@ main {
     margin: 10% auto 0;
 
     h1 {
-        font-family: $font-family;
-        font-weight: $font-weight;
+        @include font-decoration($font-family, $font-weight);
         font-size: 2rem;
     }
 }

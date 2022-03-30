@@ -23,7 +23,7 @@
     width: 100%;
         margin: 1.5rem 0;
 
-        &__result{
+        &__result {
             margin-bottom: 1rem;
             border-radius: 0.25rem;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -50,8 +50,8 @@
     &__flight-details-box{
         display: inline-block;
 
-        p{
-            color:$grey;
+        p {
+            color:$gray;
             font-size: 0.875rem;
         }
     }

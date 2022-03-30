@@ -1,13 +1,17 @@
+@mixin font($font-family) {
+    font-family:$font-family;
+    font-size: 1rem;
+}
+
 .button {
-    width: 328px;
+    width: 20rem;
     padding: 1rem;
     font-size: 1rem;
     font-family: $font-family;
-    color: $grey;
+    color: $gray;
 
     &__confirm-button {
-        font-size: 1rem;
-        font-family: $font-family;
+        @include font($font-family);
         height: 57px;
         max-width: auto;
         grid-column: 1 / span 2;
@@ -28,9 +32,8 @@
     }
 
     &__buy-button, &__register-button {
+        @include font($font-family);
         background: $white;
-        font-family: $font-family;
-        font-size: 1rem;
         color: $primary-color;
         font-weight: $font-weight-bold;
         border: 2px solid $primary-color;
@@ -53,10 +56,9 @@
     }
 
     &__login-button {
+        @include font($font-family);
         width:100%;
         background: $primary-color;
-        font-family: $font-family;
-        font-size: 1rem;
         color: $white;
         font-weight: $font-weight;
         border: 2px solid $primary-color;
@@ -76,21 +78,9 @@
         color: $white;
     }
 
-    // &__register-button {
-    //     background: $white;
-    //     font-family: $font-family;
-    //     font-size: 1rem;
-    //     color: $primary-color;
-    //     font-weight: $font-weight;
-    //     border: 2px solid $primary-color;
-    //     border-radius: 0.25rem;
-    //     cursor: pointer;
-    // }
-
-    &__return-button{
+    &__return-button {
+        @include font($font-family);
         background: $white;
-        font-family: $font-family;
-        font-size: 1rem;
         color: $primary-color;
         font-weight: $font-weight-bold;
         border: none;
@@ -99,7 +89,6 @@
         position: relative;
 
     }
-    
     
     &__return-button::before {
         content: url(/svg/returnarrow.svg);
@@ -111,20 +100,21 @@
     }
 }
 
-.passenger-input {
-    border: 1px solid $grey;
+@mixin passenger-inputs($gray) {
+    border: 1px solid $gray;
     border-radius: 4px;
-    background-image: url('/svg/person.svg');
     background-repeat: no-repeat;
     background-position: 95%;
 }
 
+.passenger-input {
+    @include passenger-inputs($gray);
+    background-image: url('/svg/person.svg'); 
+}
+
 .password-input {
-    border: 1px solid $grey;
-    border-radius: 4px;
+    @include passenger-inputs($gray);
     background-image: url('/svg/eye.svg');
-    background-repeat: no-repeat;
-    background-position: 95%;
 }
 
 // .button{
@@ -133,7 +123,7 @@
 //     padding: 1rem;
 //     font-size: 1rem;
 //     font-family: $font-family;
-//     color: $grey;
+//     color: $gray;
 
 //     &__confirm-button {
 //         font-size: 1rem;

@@ -21,50 +21,50 @@
     margin-bottom: 3rem;
 }
 
+@mixin dots() {
+    padding-top: 0.35rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+}
+
 .dot {
-    &__step{
+    &__step {
+        @include dots();
         height: 42px;
         width: 42px;
         background: $third-color;
-        border-radius: 50%;
         display: inline-block;
         color: $primary-color;
         text-align: center;
         font-size: 1.25rem;
-        padding-top: 0.35rem;
-        margin-right: 1rem;
         font-weight: $font-weight-bold;
     }
 
-    &__occupied{
+    &__occupied {
+        @include dots();
         height: 24px;
         width: 24px;
         background: $primary-color;
-        border-radius: 50%;
-        padding-top: 0.35rem;
-        margin-right: 1rem;
     }
 
-    &__not-occupied{
+    &__not-occupied {
+        @include dots();
         height: 24px;
         width: 24px;
         background: $third-color;
-        border-radius: 50%;
-        padding-top: 0.35rem;
-        margin-right: 1rem;
     }
 }
 
 .luggage-box {
     display: inline-block;
 
-    &__h1{
+    &__h1 {
         font-size: 1.25rem;
         font-weight: $font-weight-bold;
     }
 }
 
-.choose-luggage-size{
+.choose-luggage-size {
     
     &__header {
         display: flex;
@@ -80,7 +80,7 @@
     &__p {
         font-size: 0.875rem;
         font-weight: $font-weight-bold;
-        color: $grey;
+        color: $gray;
     }
 
     &__grid {
@@ -90,27 +90,29 @@
         grid-template-columns: repeat(3, 3fr);
         grid-gap: 1rem;
         max-width: 700px;
+        
+        @mixin luggage-box($white) {
+        width: 175px;
+        height: 150px;
+        color: $white;
+        cursor: pointer;
 
-        &__small {
-            width: 175px;
-            height: 150px;
-            color: $white;
-            background:$primary-color;
-            background-image: url('/svg/luggalewhite.svg');
-            background-repeat: no-repeat;
-            background-position: 50% 1rem;
-            cursor: pointer;
-
-            &__description{
+            &__description {
                 padding-top: 4rem;
                 display: inline-block;
             }
         }
 
+        &__small {
+            @include luggage-box($white);
+            background:$primary-color;
+            background-image: url('/svg/luggalewhite.svg');
+            background-repeat: no-repeat;
+            background-position: 50% 1rem;
+        }
+
         &__medium {
-            width: 175px;
-            height: 150px;
-            color: $white;
+            @include luggage-box($white);
             background: $third-color;
             background-image: url('/svg/luggageblue.svg'),
                               url('/svg/luggageblue.svg');
@@ -118,18 +120,10 @@
                                no-repeat;
             background-position: 38% 1rem,
                                  62% 1rem;
-            cursor: pointer;
-
-            &__description{
-                padding-top: 4rem;
-                display: inline-block;
-            }
         }
 
         &__large {
-            width: 175px;
-            height: 150px;
-            color: $white;
+            @include luggage-box($white);
             background: $third-color;
             background-image: url('/svg/luggageblue.svg'),
                               url('/svg/luggageblue.svg'),
@@ -140,12 +134,6 @@
             background-position: 25% 1rem,
                                  50% 1rem,
                                  75% 1rem;
-            cursor:pointer;
-
-            &__description {
-                padding-top: 4rem;
-                display: inline-block;
-            }
         }
     }
 }
@@ -161,12 +149,12 @@
     margin: 4rem 0 3rem 0;
 }
 
-.seats-occupation-legend{
+.seats-occupation-legend {
     margin-top: 4rem;
     display:flex;
     justify-content: space-evenly;
 
-    &__occupied, &__not-occupied{
+    &__occupied, &__not-occupied {
         display: flex;
         justify-content: center;
         font-size: 1rem;
