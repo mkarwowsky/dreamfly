@@ -6,9 +6,9 @@
 @import 'buttons';
 @import 'booking';
 @import 'plane';
-// html {
-//     height: 100%;
-// }
+html{
+    height: 100%;
+}
 
 @mixin font-decoration($font-family, $font-weight) {
     font-family: $font-family;
@@ -16,8 +16,8 @@
 }
 
 body {
+    height: 100%;
     @include font-decoration($font-family, $font-weight);
-    height: 100vh;
     background: 
         linear-gradient(
             to right,
@@ -26,6 +26,8 @@ body {
         ),
         url('/img/aero.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-size: 1rem;
 }
 
@@ -39,6 +41,25 @@ main {
         font-size: 2rem;
     }
 }
+
+@media screen and (max-width: 768px) {
+    body {
+        background: none;
+    }
+
+    main {
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 0;
+
+        h1 {
+            @include font-decoration($font-family, $font-weight);
+            font-size: 2rem;
+        }
+    }
+}
+
 
 
 // .bgimg {

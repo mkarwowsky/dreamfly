@@ -19,11 +19,31 @@ input[type=number] {
   /* Firefox */
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
 }
 
-header {
+.header {
+  background-color: #1435EB;
+}
+
+.navbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,32 +53,99 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.25rem 1.25rem;
-  background: #1435EB;
+  padding: 1rem 1.5rem;
 }
 
-.logo {
-  cursor: pointer;
+.hamburger {
+  display: none;
 }
 
-.nav-area {
-  list-style: none;
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
 }
 
-.nav-area li {
-  display: inline-block;
-  padding: 0 1rem;
-  text-transform: uppercase;
+.nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.nav-area li a {
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  color: #fff;
+.nav-item {
+  margin-left: 5rem;
+  color: #1435EB;
 }
 
-.nav-area li a:hover {
-  opacity: 0.5;
+.nav-link {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #1435EB;
+}
+
+.nav-link:hover {
+  color: black;
+  letter-spacing: 0.9px;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.nav-logo {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: -100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #fff;
+    color: white;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+    -webkit-box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+  .nav-menu.active {
+    top: 6rem;
+  }
+  .nav-item {
+    margin: 2.5rem 0;
+    color: white;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+            transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+            transform: translateY(-8px) rotate(-45deg);
+  }
 }
 
 .form-box {
@@ -68,7 +155,6 @@ header {
 }
 
 .dark {
-  background: darkgrey;
   background-image: url("/svg/logo.svg");
   background-repeat: no-repeat;
   background-position: 2px 3px;
@@ -78,6 +164,12 @@ header {
   padding: 1.5rem;
   display: inline-block;
   text-align: center;
+  width: 40vw;
+}
+
+.booking-form__h1 {
+  color: #1435EB;
+  font-size: 3rem;
 }
 
 .booking-form__grid {
@@ -89,6 +181,35 @@ header {
   margin: 1.5rem;
 }
 
+@media screen and (max-width: 768px) {
+  .form-box {
+    background: none;
+    border-radius: none;
+    border-color: none;
+  }
+  .booking-form {
+    width: 100vw;
+    padding: 1rem;
+    display: inline-block;
+    text-align: center;
+  }
+  .booking-form__h1 {
+    font-size: 2rem;
+  }
+  .booking-form__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    grid-gap: 1rem;
+    margin: 1rem;
+  }
+}
+
 #flights-body {
   background: white;
 }
@@ -96,6 +217,10 @@ header {
 #flights-main {
   margin: 1.5rem auto 0;
   max-width: auto;
+}
+
+#flights-main h1 {
+  font-size: 2.5rem;
 }
 
 .img {
@@ -114,7 +239,7 @@ header {
 }
 
 .search-results-box__results {
-  width: 100%;
+  width: auto;
   margin: 1.5rem 0;
 }
 
@@ -123,9 +248,11 @@ header {
   border-radius: 0.25rem;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  min-height: 4.75rem;
 }
 
 .result-box-grid {
+  grid-gap: 1rem;
   padding: 1rem;
   display: -ms-grid;
   display: grid;
@@ -139,11 +266,67 @@ header {
 
 .result-box-grid__flight-details-box {
   display: inline-block;
+  font-size: 2rem;
 }
 
 .result-box-grid__flight-details-box p {
   color: #4A4A4A;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  #flights-main {
+    margin: 1.5rem auto 0;
+    max-width: 80%;
+  }
+  #flights-main h1 {
+    font-size: 2rem;
+  }
+  .search-results-box__information {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .search-results-box__results {
+    width: auto;
+    margin: 1.5rem 0;
+  }
+  .search-results-box__results__result {
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    min-height: 4.75rem;
+  }
+  .result-box-grid {
+    grid-gap: 1rem;
+    padding: 1rem;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "flight-details-box", "airplane-icon", "flight-details-box", "flight-details-box", "buy-button";
+    -ms-grid-columns: (auto)[1];
+        grid-template-columns: repeat(1, auto);
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    text-align: center;
+  }
+  .result-box-grid__airplane-icon {
+    padding: 0 0 0 46.5%;
+  }
+  .result-box-grid__flight-details-box {
+    display: inline-block;
+    font-size: 2rem;
+  }
+  .result-box-grid__flight-details-box p {
+    color: #4A4A4A;
+    font-size: 1.5rem;
+  }
 }
 
 #login-body {
@@ -166,17 +349,21 @@ header {
 }
 
 .button {
-  width: 20rem;
+  width: 100%;
   padding: 1rem;
   font-size: 1rem;
   font-family: "Poppins";
   color: #4A4A4A;
+  border-radius: 4px;
+  border: 1px solid #4A4A4A;
+  background-repeat: no-repeat;
+  background-position: 95%;
 }
 
 .button__confirm-button {
   font-family: "Poppins";
-  font-size: 1rem;
-  height: 57px;
+  font-size: 1.5rem;
+  min-height: 57px;
   max-width: auto;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -200,7 +387,7 @@ header {
 
 .button__buy-button, .button__register-button {
   font-family: "Poppins";
-  font-size: 1rem;
+  font-size: 1.5rem;
   background: #fff;
   color: #1435EB;
   font-weight: 600;
@@ -224,7 +411,7 @@ header {
 
 .button__login-button {
   font-family: "Poppins";
-  font-size: 1rem;
+  font-size: 1.5rem;
   width: 100%;
   background: #1435EB;
   color: #fff;
@@ -247,7 +434,7 @@ header {
 
 .button__return-button {
   font-family: "Poppins";
-  font-size: 1rem;
+  font-size: 1.5rem;
   background: #fff;
   color: #1435EB;
   font-weight: 600;
@@ -265,20 +452,62 @@ header {
   background-color: #fff;
 }
 
-.passenger-input {
+.input-field {
   border: 1px solid #4A4A4A;
   border-radius: 4px;
   background-repeat: no-repeat;
   background-position: 95%;
+  font-size: 1.5rem;
+}
+
+.passenger-input {
   background-image: url("/svg/person.svg");
+  border: 1px solid #4A4A4A;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position: 95%;
+  font-size: 1.5rem;
 }
 
 .password-input {
-  border: 1px solid #4A4A4A;
-  border-radius: 4px;
-  background-repeat: no-repeat;
-  background-position: 95%;
   background-image: url("/svg/eye.svg");
+}
+
+@media screen and (max-width: 768px) {
+  .button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: "Poppins";
+    color: #4A4A4A;
+    border-radius: 4px;
+    border: 1px solid #4A4A4A;
+    background-repeat: no-repeat;
+    background-position: 95%;
+  }
+  .button__confirm-button {
+    font-family: "Poppins";
+    font-size: 1.5rem;
+    min-height: 57px;
+    max-width: auto;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+    -ms-grid-row: 3;
+    grid-row: 3;
+    background: #1435EB;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .button__confirm-button::before {
+    content: url(/svg/loupe.svg);
+    display: inline-block;
+    padding-right: 0.625rem;
+    vertical-align: middle;
+    padding-top: 0.5rem;
+  }
 }
 
 #booking-body {
@@ -473,13 +702,19 @@ header {
   fill: red !important;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   font-family: "Poppins";
   font-weight: 550;
-  height: 100vh;
   background: -webkit-gradient(linear, left top, right top, from(rgba(20, 53, 235, 0.1)), to(rgba(20, 53, 235, 0.5))), url("/img/aero.jpg");
   background: linear-gradient(to right, rgba(20, 53, 235, 0.1), rgba(20, 53, 235, 0.5)), url("/img/aero.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-size: 1rem;
 }
 
@@ -497,5 +732,26 @@ main h1 {
   font-family: "Poppins";
   font-weight: 550;
   font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background: none;
+  }
+  main {
+    height: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto 0;
+  }
+  main h1 {
+    font-family: "Poppins";
+    font-weight: 550;
+    font-size: 2rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

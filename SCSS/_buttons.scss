@@ -1,18 +1,22 @@
 @mixin font($font-family) {
     font-family:$font-family;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .button {
-    width: 20rem;
+    width: 100%;
     padding: 1rem;
     font-size: 1rem;
     font-family: $font-family;
     color: $gray;
+    border-radius: 4px;
+    border: 1px solid $gray;
+    background-repeat: no-repeat;
+    background-position: 95%;
 
     &__confirm-button {
         @include font($font-family);
-        height: 57px;
+        min-height: 57px;
         max-width: auto;
         grid-column: 1 / span 2;
         grid-row: 3;
@@ -44,7 +48,6 @@
             padding: 1rem;
         }
     }
-    
     
     &__buy-button::before {
         content: url(/svg/bucket.svg);
@@ -105,17 +108,55 @@
     border-radius: 4px;
     background-repeat: no-repeat;
     background-position: 95%;
+    font-size: 1.5rem;
+}
+
+.input-field{
+    @include passenger-inputs($gray);
 }
 
 .passenger-input {
-    @include passenger-inputs($gray);
-    background-image: url('/svg/person.svg'); 
+    background-image: url('/svg/person.svg');
+    @include passenger-inputs($gray); 
 }
 
 .password-input {
-    @include passenger-inputs($gray);
     background-image: url('/svg/eye.svg');
 }
+
+@media screen and (max-width: 768px){
+    .button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+        font-family: $font-family;
+        color: $gray;
+        border-radius: 4px;
+        border: 1px solid $gray;
+        background-repeat: no-repeat;
+        background-position: 95%;
+
+        &__confirm-button {
+            @include font($font-family);
+            min-height: 57px;
+            max-width: auto;
+            grid-column: 1 / span 2;
+            grid-row: 3;
+            background: $primary-color;
+            color: $white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        &__confirm-button::before {
+            content: url(/svg/loupe.svg);
+            display: inline-block;
+            padding-right: 0.625rem;
+            vertical-align: middle;
+            padding-top: 0.5rem;
+        }
+}}
 
 // .button{
 //     width: 328px;

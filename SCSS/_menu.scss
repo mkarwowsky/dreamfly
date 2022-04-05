@@ -1,34 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
 }
 
-header {
+.header{
+    background-color: $primary-color;
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.25rem 1.25rem;
-    background: $primary-color;
+    padding: 1rem 1.5rem;
 }
 
-.logo {
-    cursor: pointer;
+.hamburger {
+    display: none;
 }
 
-.nav-area {
-    list-style: none;
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: $white;
+}
 
-    li {
-        display: inline-block;
-        padding: 0 1rem;
-        text-transform: uppercase;
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        a {
-            transition: 0.4s;
-            color: $white;
+.nav-item {
+    margin-left: 5rem;
+    // color: $secondary-color;
+    color: $primary-color;
+}
 
-            &:hover {
-                opacity: 0.5;
-            }
-        }
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    // color: $secondary-color;
+    color: $primary-color;
+}
+
+.nav-link:hover{
+    // transition: 0.5s;
+    // color: $secondary-color;
+    // color: $primary-color;
+    color:black;
+    letter-spacing: 0.9px;
+    transition: all .3s linear;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: $secondary-color;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        // left: -100%;
+        top:-100%;
+        flex-direction: column;
+        background-color: #fff;
+        color: $secondary-color;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.7s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
     }
+
+    .nav-menu.active {
+        // left: 0;
+        top: 6rem;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+        color: $secondary-color;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    // Inside the Media Query.
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
 }

@@ -5,6 +5,10 @@
 #flights-main {
     margin: 1.5rem auto 0;
     max-width: auto;
+
+    h1 {
+        font-size: 2.5rem;
+    }
 }
 
 .img {
@@ -20,14 +24,14 @@
     }
 
     &__results {
-    width: 100%;
+        width: auto;
         margin: 1.5rem 0;
 
         &__result {
             margin-bottom: 1rem;
             border-radius: 0.25rem;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-            // min-height: 4.75rem;
+            min-height: 4.75rem;
         }
     }
 }
@@ -41,18 +45,107 @@
     //     "departue-time airplane-icon arrival-time number-passengers"
     // ;
     // padding: 1rem;
-    // grid-gap:20px;
+    grid-gap:1rem;
     padding: 1rem;
     display: grid;
     grid-template-areas:"flight-details-box airplane-icon flight-details-box flight-details-box buy-button";
     grid-template-columns: repeat(5,auto);
     align-items: center;
+    
     &__flight-details-box{
         display: inline-block;
+        font-size:2rem;
 
         p {
             color:$gray;
-            font-size: 0.875rem;
+            font-size: 1.5rem;
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    #flights-main {
+        margin: 1.5rem auto 0;
+        max-width: 80%;
+    
+        h1 {
+            font-size: 2rem;
+        }
+    }
+    
+    
+    .search-results-box {
+        
+        &__information {
+            display: flex;
+            align-content: center;
+            justify-content: space-between;
+        }
+    
+        &__results {
+            width: auto;
+            margin: 1.5rem 0;
+    
+            &__result {
+                margin-bottom: 1rem;
+                border-radius: 0.25rem;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+                min-height: 4.75rem;
+            }
+        }
+    }
+
+    .result-box-grid {
+        grid-gap: 1rem;
+        padding: 1rem;
+        display: grid;
+        grid-template-areas:"flight-details-box",
+                            "airplane-icon",
+                            "flight-details-box",
+                            "flight-details-box",
+                            "buy-button";
+        grid-template-columns: repeat(1,auto);
+        align-items: center !important;
+        text-align: center;
+
+        &__airplane-icon {
+            padding: 0 0 0 46.5%
+        }
+        
+        &__flight-details-box{
+            display: inline-block;
+            font-size: 2rem;
+    
+            p {
+                color:$gray;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+//     .form-box {
+//         background: none;
+//         border-radius: none;
+//         border-color: none;
+//         //width: 50% !important;
+//         // box-sizing: border-box;
+//     }
+//     .booking-form {
+//         width: 100vw;
+//         padding: 1rem;
+//         display: inline-block;
+//         text-align: center;
+    
+//         &__h1{
+//             font-size: 1rem;
+//         }
+    
+//         &__grid {
+//             display: flex;
+//             text-align: center;
+//             flex-direction: column;
+//             grid-gap: 1rem;
+//             margin: 1rem;
+//         }
+//     }
+// }
