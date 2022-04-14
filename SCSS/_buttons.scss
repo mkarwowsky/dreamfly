@@ -1,12 +1,12 @@
 @mixin font($font-family) {
     font-family:$font-family;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .button {
     width: 100%;
     padding: 1rem;
-    font-size: 1rem;
+    font-size: 2rem;
     font-family: $font-family;
     color: $gray;
     border-radius: 4px;
@@ -39,8 +39,8 @@
         @include font($font-family);
         background: $white;
         color: $primary-color;
-        font-weight: $font-weight-bold;
-        border: 2px solid $primary-color;
+        font-weight: $font-weight;
+        border: 1px double $primary-color;
         border-radius: 0.25rem;
         cursor: pointer;
 
@@ -54,7 +54,7 @@
         display: inline-block;
         padding-right: 0.5rem;
         vertical-align: middle;
-        padding-top: 0.75rem;
+        padding-top: 1.25rem;
         background-color: $white;
     }
 
@@ -74,9 +74,9 @@
     &__login-button::before {
         content: url(/svg/person-2.svg);
         display: inline-block;
-        padding-right: 0.5rem;
+        padding-right: 1rem;
         vertical-align: middle;
-        padding-top: 0.5rem;
+        padding-top: 1rem;
         background-color: $primary-color;
         color: $white;
     }
@@ -85,7 +85,7 @@
         @include font($font-family);
         background: $white;
         color: $primary-color;
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight;
         border: none;
         //border-radius: 0.25rem;
         cursor: pointer;
@@ -98,7 +98,7 @@
         display: inline-block;
         padding-right: 0.5rem;
         vertical-align: middle;
-        padding-top: 0.75rem;
+        padding-top: 1rem;
         background-color: $white;
     }
 }

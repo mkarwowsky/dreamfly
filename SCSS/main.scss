@@ -34,11 +34,11 @@ body {
 main {
     display: flex;
     justify-content: center;
-    margin: 10% auto 0;
+    margin: 10vh auto;
 
     h1 {
         @include font-decoration($font-family, $font-weight);
-        font-size: 2rem;
+        font-size: 4rem;
     }
 }
 
@@ -55,7 +55,7 @@ main {
 
         h1 {
             @include font-decoration($font-family, $font-weight);
-            font-size: 2rem;
+            font-size: 3rem;
         }
     }
 }

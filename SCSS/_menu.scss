@@ -58,7 +58,7 @@ a {
     font-size: 1.6rem;
     font-weight: 400;
     // color: $secondary-color;
-    color: $primary-color;
+    color: $secondary-color;
 }
 
 .nav-link:hover{
@@ -77,6 +77,13 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+    .nav-link{
+        font-size: 1.6rem;
+        font-weight: 400;
+        // color: $secondary-color;
+        color: $primary-color;
+    }
+
     .nav-menu {
         position: fixed;
         // left: -100%;

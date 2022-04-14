@@ -4,7 +4,7 @@
 
 #booking-main {
     margin: 1.5rem auto 0;
-    max-width: auto;
+    // max-width: auto;
 }
 
 .booking-seats-grid {
@@ -16,13 +16,12 @@
 
 .booking-box-header {
     display: grid;
-    justify-items: start;
-    grid-template-columns: repeat(2, 37.5%);
+    grid-template-columns: repeat(3, 33.3%);
     margin-bottom: 3rem;
 }
 
 @mixin dots() {
-    padding-top: 0.35rem;
+    padding-top: 0.75rem;
     margin-right: 1rem;
     border-radius: 50%;
 }
@@ -36,7 +35,7 @@
         display: inline-block;
         color: $primary-color;
         text-align: center;
-        font-size: 1.25rem;
+        font-size: 1.75rem;
         font-weight: $font-weight-bold;
     }
 
@@ -59,8 +58,8 @@
     display: inline-block;
 
     &__h1 {
-        font-size: 1.25rem;
-        font-weight: $font-weight-bold;
+        font-size: 2rem;
+        font-weight: $font-weight;
     }
 }
 
@@ -72,13 +71,13 @@
     }
 
     &__h2 {
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: $font-weight-bold;
         color: black;
     }
 
     &__p {
-        font-size: 0.875rem;
+        font-size: 1.5rem;
         font-weight: $font-weight-bold;
         color: $gray;
     }
@@ -89,16 +88,17 @@
         margin: 2rem 0 3rem;
         grid-template-columns: repeat(3, 3fr);
         grid-gap: 1rem;
-        max-width: 700px;
+        // max-width: auto;
         
         @mixin luggage-box($white) {
         width: 175px;
         height: 150px;
         color: $white;
         cursor: pointer;
-
+        
             &__description {
-                padding-top: 4rem;
+                font-size: 1.5rem;
+                padding-top: 7rem;
                 display: inline-block;
             }
         }
@@ -108,7 +108,7 @@
             background:$primary-color;
             background-image: url('/svg/luggalewhite.svg');
             background-repeat: no-repeat;
-            background-position: 50% 1rem;
+            background-position: 50% 2rem;
         }
 
         &__medium {
@@ -118,8 +118,8 @@
                               url('/svg/luggageblue.svg');
             background-repeat: no-repeat,
                                no-repeat;
-            background-position: 38% 1rem,
-                                 62% 1rem;
+            background-position: 38% 2rem,
+                                 62% 2rem;
         }
 
         &__large {
@@ -131,17 +131,18 @@
             background-repeat: no-repeat,
                                no-repeat,
                                no-repeat;
-            background-position: 25% 1rem,
-                                 50% 1rem,
-                                 75% 1rem;
+            background-position: 25% 2rem,
+                                 50% 2rem,
+                                 75% 2rem;
         }
     }
 }
 
 .seats-box {
+
     &__header {
         display: flex;
-        align-items:center;
+        align-items: center;
     }
 }
 
@@ -151,13 +152,186 @@
 
 .seats-occupation-legend {
     margin-top: 4rem;
-    display:flex;
+    display: flex;
     justify-content: space-evenly;
 
     &__occupied, &__not-occupied {
         display: flex;
         justify-content: center;
-        font-size: 1rem;
-        font-weight: $font-weight-bold;
+        font-size: 1.5rem;
+        font-weight: $font-weight;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #booking-body {
+        background: $secondary-color;
+    }
+    
+    #booking-main {
+        margin: 1.5rem auto 0;
+        // max-width: auto;
+    }
+    
+    .booking-seats-grid {
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        margin: 1.5rem;
+    }
+    
+    .booking-box-header {
+        display: block;
+        justify-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(1, auto);
+        margin-bottom: 3rem;
+    }
+    
+    @mixin dots() {
+        padding-top: 0.75rem;
+        margin-right: 1rem;
+        border-radius: 50%;
+    }
+    
+    .dot {
+        &__step {
+            @include dots();
+            height: 42px;
+            width: 42px;
+            background: $third-color;
+            display: inline-block;
+            color: $primary-color;
+            text-align: center;
+            font-size: 1.75rem;
+            font-weight: $font-weight-bold;
+        }
+    
+        &__occupied {
+            @include dots();
+            height: 24px;
+            width: 24px;
+            background: $primary-color;
+        }
+    
+        &__not-occupied {
+            @include dots();
+            height: 24px;
+            width: 24px;
+            background: $third-color;
+        }
+    }
+    
+    .luggage-box {
+        display: inline-block;
+    
+        &__h1 {
+            font-size: 2rem;
+            font-weight: $font-weight;
+        }
+    }
+    
+    .choose-luggage-size {
+
+        &__header {
+            display: flex;
+            justify-content: center;
+        }
+    
+        &__h2 {
+            font-size: 1.5rem;
+            font-weight: $font-weight-bold;
+            color: black;
+        }
+    
+        &__p {
+            font-size: 1.5rem;
+            font-weight: $font-weight-bold;
+            color: $gray;
+        }
+    
+        &__grid {
+            display: grid;
+            justify-items: center;
+            margin: 2rem 0 3rem;
+            grid-template-columns: repeat(1, auto);
+            grid-gap: 1rem;
+            // max-width: auto;
+            
+            @mixin luggage-box($white) {
+            width: 175px;
+            height: 150px;
+            color: $white;
+            cursor: pointer;
+            
+                &__description {
+                    font-size: 1.5rem;
+                    padding-top: 7rem;
+                    display: inline-block;
+                }
+            }
+    
+            &__small {
+                @include luggage-box($white);
+                background:$primary-color;
+                background-image: url('/svg/luggalewhite.svg');
+                background-repeat: no-repeat;
+                background-position: 50% 2rem;
+            }
+    
+            &__medium {
+                @include luggage-box($white);
+                background: $third-color;
+                background-image: url('/svg/luggageblue.svg'),
+                                  url('/svg/luggageblue.svg');
+                background-repeat: no-repeat,
+                                   no-repeat;
+                background-position: 38% 2rem,
+                                     62% 2rem;
+            }
+    
+            &__large {
+                @include luggage-box($white);
+                background: $third-color;
+                background-image: url('/svg/luggageblue.svg'),
+                                  url('/svg/luggageblue.svg'),
+                                  url('/svg/luggageblue.svg');
+                background-repeat: no-repeat,
+                                   no-repeat,
+                                   no-repeat;
+                background-position: 25% 2rem,
+                                     50% 2rem,
+                                     75% 2rem;
+            }
+        }
+    }
+    
+    .seats-box {
+        &__header {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
+    .seats-box-plane {
+        margin: 4rem 0 3rem 0;
+    }
+    
+    .seats-occupation-legend {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: space-evenly;
+    
+        &__occupied, &__not-occupied {
+            display: flex;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: $font-weight;
+        }
+    }
+
+    .plane {
+        transform: rotate(90deg);
+        margin: 40rem 0 40rem 0;
     }
 }
