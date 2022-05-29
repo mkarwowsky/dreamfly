@@ -10,7 +10,7 @@
 <body id="booking-body">
     <header class="header">
         <nav class="navbar">
-            <img src = "/svg/logo.svg" class="logo">
+            <img src = "./svg/logo.svg" class="logo">
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="#" class="nav-link">Services</a>
@@ -36,7 +36,7 @@
         <div class="form-box">
             <div class="booking-seats-grid">
                 <div class="booking-box-header">
-                    <button class="button__return-button" onclick="location.href='login.html'">Back</button>
+                    <button class="button__return-button" onclick="location.href='./login.html'">Back</button>
                     <h1>Zakup biletów</h1>
                 </div>
                 <div class="choose-luggage-size">
@@ -82,7 +82,7 @@
 
                         <div class="seats-box-plane">
                             <div class="plane">
-                                <object id="svg-plane" data="/svg/plane.svg" type="image/svg+xml"></object>
+                                <object id="svg-plane" data="./svg/plane.svg" type="image/svg+xml"></object>
                             </div>
 
                             <div class="seats-occupation-legend">
@@ -98,12 +98,12 @@
                             </div>
                         </div>
                         
-                        <button class="button__login-button">Przejdź do płatności</button>  
+                        <button class="button__login-button" onclick="location.href='./login.html'">Przejdź do płatności</button>  
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <script src="js/plane.js"></script>
+    <script src="./js/plane.js"></script>
 </body>
 </html>
